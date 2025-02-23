@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>I Like Nature</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      height: 100vh;
+      background-image:url("2.jpeg");
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    .cloud {
+      position: absolute;
+      top: 10%;
+      width: 200px;
+      height: 120px;
+      background-color: #ffffff;
+      border-radius: 50%;
+      opacity: 0.8;
+      box-shadow: 0px 0px 50px rgba(255, 255, 255, 0.6);
+      animation: moveClouds 30s infinite linear;
+    }
+
+    .cloud:before, .cloud:after {
+      content: '';
+      position: absolute;
+      background-color: #ffffff;
+      border-radius: 50%;
+    }
+
+    .cloud:before {
+      width: 120px;
+      height: 80px;
+      top: -30px;
+      left: 30px;
+    }
+
+    .cloud:after {
+      width: 140px;
+      height: 100px;
+      top: 10px;
+      left: -40px;
+    }
+
+    @keyframes moveClouds {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(100vw);
+      }
+    }
+
+
+    .container {
+      position: absolute;
+      text-align: center;
+      color: white;
+      z-index: 10;
+      animation: textAnimation 3s ease-in-out infinite;
+    }
+
+    .container h1 {
+      font-size: 3rem;
+      text-transform: uppercase;
+      font-weight: bold;
+      margin-bottom: 20px;
+      animation: fadeIn 3s ease-out infinite alternate;
+      font-family: monospace;
+      color: black;
+    }
+
+    .container p {
+      font-size: 1.2rem;
+      color: red;
+      font-style: italic;
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @keyframes textAnimation {
+      0% {
+        transform: translateY(-30px);
+      }
+      50% {
+        transform: translateY(0);
+      }
+      100% {
+        transform: translateY(-30px);
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+
+  <div class="cloud"></div>
+  <div class="cloud" style="top: 20%; left: 50%;"></div>
+  <div class="cloud" style="top: 30%; left: 70%;"></div>
+
+
+  <div class="container">
+    <h1>I Like Nature</h1>
+    <p>Embrace the serenity of nature around you.</p>
+  </div>
+
+</body>
+</html>
